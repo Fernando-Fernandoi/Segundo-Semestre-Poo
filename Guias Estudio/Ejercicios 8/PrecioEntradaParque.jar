@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class PrecioEntradaParque {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar la edad de la persona
+        System.out.print("Ingrese la edad de la persona: ");
+        int edad = scanner.nextInt();
+        int precioEntrada;
+
+        // Clasificar por edades
+        if (edad < 12) {
+            precioEntrada = 2000;  // Niños
+        } else if (edad >= 12 && edad <= 17) {
+            precioEntrada = 3500;  // Adolescentes
+        } else {
+            precioEntrada = 5000;  // Adultos
+        }
+
+        // Mostrar el precio
+        System.out.println("El precio de entrada es: $" + precioEntrada);
+
+        scanner.close();
+    }
+}

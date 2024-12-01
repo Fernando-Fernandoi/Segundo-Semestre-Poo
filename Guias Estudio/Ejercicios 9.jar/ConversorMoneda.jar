@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class ConversorMoneda {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Tipo de cambio para cada moneda
+        double[] tiposCambio = {0.0011, 0.00095, 0.15, 0.00084, 0.0073};
+        String[] monedas = {"Dólares", "Euros", "Yenes", "Libras Esterlinas", "Yuanes"};
+
+        // Solicitar la cantidad en pesos chilenos y la opción de moneda
+        System.out.print("Ingrese la cantidad de dinero en pesos chilenos: ");
+        double pesosChilenos = scanner.nextDouble();
+        System.out.println("Seleccione la moneda de destino:");
+        System.out.println("1: Dólares");
+        System.out.println("2: Euros");
+        System.out.println("3: Yenes");
+        System.out.println("4: Libras Esterlinas");
+        System.out.println("5: Yuanes");
+        int opcion = scanner.nextInt();
+
+        // Validar opción
+        if (opcion < 1 || opcion > 5) {
+            System.out.println("Opción inválida.");
+        } else {
+            // Calcular y mostrar el resultado
+            double montoConvertido = pesosChilenos * tiposCambio[opcion - 1];
+            System.out.println("Monto convertido a " + monedas[opcion - 1] + ": " + montoConvertido);
+        }
+
+        scanner.close();
+    }
+}

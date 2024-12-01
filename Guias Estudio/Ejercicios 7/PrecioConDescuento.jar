@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class PrecioConDescuento {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar el precio original y el porcentaje de descuento
+        System.out.print("Ingrese el precio original del producto: $");
+        double precioOriginal = scanner.nextDouble();
+        System.out.print("Ingrese el porcentaje de descuento: ");
+        double descuento = scanner.nextDouble();
+
+        // Calcular el monto de descuento y el precio final
+        double montoDescuento = precioOriginal * (descuento / 100);
+        double precioFinal = precioOriginal - montoDescuento;
+
+        // Mostrar los resultados
+        System.out.println("Monto de descuento: $" + montoDescuento);
+        System.out.println("Precio final después de descuento: $" + precioFinal);
+
+        // Comparar si el descuento es mayor o menor al 20%
+        if (descuento > 20) {
+            System.out.println("El descuento fue mayor al 20%.");
+        } else {
+            System.out.println("El descuento fue menor al 20%.");
+        }
+
+        scanner.close();
+    }
+}
